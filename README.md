@@ -1,5 +1,7 @@
 # Terra Textures
 
+**[Live demo](https://lorenzodalcol.com/personal-projects/terra-textures)**: the WebGL version, where you can turn each layer on and off.
+
 My first OpenGL program, written in 2009: a rotating Earth with up to six textures layered on it at once, using multitexturing. I wrote it for the *Elementi di grafica digitale* (elements of digital graphics) exam at the University of Trieste. In 2026 I restored it so that it builds and runs properly on Windows 10.
 
 ![The Earth with the grid and the clouds](docs/2026.png)
