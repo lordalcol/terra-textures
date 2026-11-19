@@ -1,0 +1,8 @@
+Lorenzo Dal Col
+lorenzo.dalcol@gmail.com
+
+La descrizione del lavoro svolto e del sorgente è dentro il file:
+
+TerraTextures/sfera.cpp
+
+in forma di commento del codice.
