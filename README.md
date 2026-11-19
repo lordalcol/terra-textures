@@ -42,6 +42,18 @@ Then run `build/Release/TerraTextures.exe` (on Linux, `build/TerraTextures`). Th
 
 `TerraTextures --capture out.ppm [layers]` renders two seconds of animation, saves the last frame and exits, without user input. `layers` is a string of digits, for example `1236`.
 
+## The WebGL version
+
+[`web/`](web) is the same program for the browser, in plain JavaScript and WebGL 1 with no build step. It builds the same sphere, rings of triangle strips from pole to pole. Instead of fixed-function texture units, one fragment shader multiplies the five colour layers together and blends the clouds on top. A layer that is off counts as white. It adds checkboxes for the layers and lets you drag the globe to turn it.
+
+To run it locally, serve the folder, for example:
+
+```bash
+python -m http.server 8000 --directory web
+```
+
+then open http://localhost:8000.
+
 ## What the 2026 restoration changed
 
 The first commit is the project as I submitted it in May 2009, except for `glext.h`: that was a 2000 SGI header whose licence doesn't allow redistribution. Built today with a stand-in for that header, the 2009 code runs, but looks like this:

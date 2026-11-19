@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Terra Textures · my first OpenGL program, in WebGL</title>
+    <meta name="description" content="A rotating Earth with six textures layered on it: my first OpenGL program, written in 2009 for a university exam, redone in WebGL." />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <img class="logo" src="favicon.svg" alt="" />
+        <div>
+          <h1>Terra Textures</h1>
+          <p>My first OpenGL program (2009), in WebGL</p>
+        </div>
+      </div>
+      <a class="btn ghost" href="https://github.com/lordalcol/terra-textures">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        <span>Source</span>
+      </a>
+    </header>
+
+    <main class="layout">
+      <section class="stage">
+        <canvas id="globe" aria-label="A rotating Earth. Drag to turn it."></canvas>
+        <p id="error" class="error" hidden></p>
+      </section>
+
+      <aside class="panel">
+        <h2>Layers</h2>
+        <div id="layers" class="layers"></div>
+        <button id="spin" class="btn wide" type="button" aria-pressed="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+          <span>Stop the rotation</span>
+        </button>
+        <p class="hint">Keys: <kbd>1</kbd>–<kbd>6</kbd> toggle the layers, <kbd>Space</kbd> stops the rotation. Drag the globe to turn it.</p>
+
+        <h2>About</h2>
+        <p>
+          I wrote the original in C++ with OpenGL and GLUT in 2009, for the <em>Elementi di grafica digitale</em> exam at the
+          University of Trieste. It layers the textures with multitexturing: each layer gets its own texture unit, and
+          each unit multiplies the colour by its texture.
+        </p>
+        <p>
+          This version does the same in one WebGL fragment shader. The sphere is built the same way, as rings of
+          triangle strips with the texture coordinates taken from longitude and latitude, and the clouds are blended on
+          top so thick clouds come out white.
+        </p>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <p>By <a href="https://lorenzodalcol.com/personal-projects">Lorenzo Dal Col</a>, 2009, restored in 2026.</p>
+    </footer>
+  </body>
+</html>
